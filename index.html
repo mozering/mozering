@@ -12,27 +12,47 @@
 	<meta property="og:description" content="디자인학과 학생들을 위한 새롭고 재밌는 재난예방교육 사이트입니다.">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500&display=swap" rel="stylesheet">
 
-
 	<style type="text/css">
+		
+  .house:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 		body,p {margin: 0; padding: 0;}
 		.text-head {text-align: center; font-size: 4em;}
 		@font-face {font-family: 'Jalnan'; src: url(Jalnan.ttf) format('truetype')}
-		body {font-family: Jalnan; background-image: url("background.png"); background-size: contain; background-attachment: fixed; background-repeat: no-repeat; background-position: center;}
+		body {font-family: Jalnan;}
 		div {width: 1280px; height: 1200px;}
-		
-
-
+		.house {position: fixed; z-index: 1; width:100%;  top:1%;left:0%;}
+		.house img {width: 100%; }
 		.a {height: 800px; position: relative; z-index: 100; background-color: white; }
 		.a h1 {position: absolute; top:200px; text-align: center; left: 100px; color: #212851;}
 		.a p {font-family: 'Noto Sans KR', sans-serif; position: absolute; top:400px; text-align: left; left: 100px; color: #212851; font-size: 25px; }
 		.a-1 {height: 50px; position: relative;}
-		.a-1 img {position: absolute; top: 100px; left: 325px; width: 50%}
+		.a-1 img {position: absolute; top: 100px; left: 325px; width: 50%; z-index:2; }
 		.b {position: relative;}
 		.b img {position: absolute; width: 12%; top: 200px; left: -60px;}
 		.c {position: relative;}
 		.c img {position: absolute; width: 12%; top: 200px; left: 300px;}
 		.d {position: relative;}
-		.d img {position: absolute; width: 100%; left: -300px; top: 400px}
+		.d img {position: absolute; width: 100%; left: -300px; top: 400px; z-index: 10;}
 		.e {position: relative;}
 		.e img {position: absolute; width: 12%; top: -800px; left: -60px;}
 		.f {position: relative;}
@@ -53,13 +73,13 @@
 		.m p {position: absolute; top: -1750px; width: 210px; font-weight: 500; left: -50px;}
 		.m img {position: absolute; top: -1750px; width: 100%; left: 50px;}
 		.a-2 {height: 50px; position: relative;}
-		.a-2 img {position: absolute; top: -2600px; left: 360px; width: 30%; z-index: }
+		.a-2 img {position: absolute; top: -2600px; left: 360px; width: 30%; z-index:2;}
 		.b-1 {position: relative;}
 		.b-1 img {position: absolute; width: 12%; top: -2400px; left: -60px;} 
 		.c-1 {position: relative;}
 		.c-1 img {position: absolute; width: 12%; top: -2400px; left: 300px;}
 		.d-1 {position: relative;}
-		.d-1 img {position: absolute; width: 100%; left: -300px; top: -2100px}
+		.d-1 img {position: absolute; width: 100%; left: -300px; top: -2100px; z-index: 10;}
 		.e-1 {position: relative;}
 		.e-1 img {position: absolute; width: 12%; top: -3300px; left: -60px;}
 		.f-1 {position: relative;}
@@ -79,13 +99,13 @@
 		.m-1 img {position: absolute; top: -4300px; width: 100%; left: 50px;}
 		.row {width: 1000px; margin: auto; position: relative; z-index: 2;}
 		.a-3 {height: 50px; position: relative;}
-		.a-3 img {position: absolute; top: -5000px; left: 325px; width: 30%}
+		.a-3 img {position: absolute; top: -5000px; left: 325px; width: 30%; z-index:2;}
 		.b-2 {position: relative;}
 		.b-2 img {position: absolute; width: 12%; top: -4800px; left: -60px;}
 		.c-2  {position: relative;}
 		.c-2  img {position: absolute; width: 12%; top: -4800px; left: 300px;}
 		.d-2  {position: relative;}
-		.d-2  img {position: absolute; width: 100%; left: -300px; top: -4500px}
+		.d-2  img {position: absolute; width: 100%; left: -300px; top: -4500px; z-index:2;}
 		.e-2  {position: relative;}
 		.e-2  img {position: absolute; width: 12%; top: -5800px; left: -60px;}
 		.f-2  {position: relative;}
@@ -106,13 +126,13 @@
 		.m-2  p {position: absolute; top: -6750px; width: 210px; font-weight: 500; left: -50px;}
 		.m-2  img {position: absolute; top: -6750px; width: 100%; left: 50px;}
 		.a-4 {height: 50px; position: relative;}
-		.a-4 img {position: absolute; top: -7000px; left: 350px; width: 30%}
+		.a-4 img {position: absolute; top: -7000px; left: 350px; width: 30%; z-index:2;}
 		.b-3 {position: relative;}
 		.b-3 img {position: absolute; width: 12%; top: -6800px; left: -60px;}
 		.c-3  {position: relative;}
 		.c-3  img {position: absolute; width: 12%; top: -6800px; left: 300px;}
 		.d-3  {position: relative;}
-		.d-3  img {position: absolute; width: 100%; left: -300px; top: -6500px}
+		.d-3  img {position: absolute; width: 100%; left: -300px; top: -6500px; z-index:2;}
 		.e-3  {position: relative;}
 		.e-3  img {position: absolute; width: 12%; top: -7750px; left: -60px;}
 		.f-3  {position: relative;}
@@ -133,13 +153,13 @@
 		.m-3  p {position: absolute; top: -8750px; width: 210px; font-weight: 500; left: -50px;}
 		.m-3  img {position: absolute; top: -8750px; width: 100%; left: 50px;}
 		.a-5 {height: 50px; position: relative;}
-		.a-5 img {position: absolute; top: -9000px; left: 350px; width: 20%}
+		.a-5 img {position: absolute; top: -9000px; left: 350px; width: 20%; z-index:2;}
 		.b-4 {position: relative;}
 		.b-4 img {position: absolute; width: 12%; top: -8800px; left: -60px;}
 		.c-4  {position: relative;}
 		.c-4  img {position: absolute; width: 12%; top: -8800px; left: 300px;}
 		.d-4  {position: relative;}
-		.d-4  img {position: absolute; width: 70%; left: -300px; top: -8500px}
+		.d-4  img {position: absolute; width: 70%; left: -300px; top: -8500px;z-index:2;}
 		.e-4  {position: relative;}
 		.e-4  img {position: absolute; width: 12%; top: -9800px; left: -60px;}
 		.f-4  {position: relative;}
@@ -167,13 +187,16 @@
 		.col-5 {width: 83.32%}
 		.col-6 {width: 100%}
 		.explain {font-family: 'Noto Sans KR', sans-serif;}
-	</style>
+</style>
 </head>
 <body>
 	<div class="a"> 
 		<h1 class="text-head">살아남아라! 디자인과!</h1>
 		<p> 재난이 일상이 되어버린 2020년, 당신은 재난에 대해 얼마나 알고 계신가요? <br>지루하고 평범한 재난 예방 교육은 이제 그만!<br> 오직 한경대 디자인과를 위한 귀엽고 유쾌한 재난 예방 교육 사이트를 소개합니다. </p>
 		</div>
+	<div class="house">
+	<img src="background.png">
+	</div>
 	<div class="a-1">
 	<img src="gif3.gif">
 		
